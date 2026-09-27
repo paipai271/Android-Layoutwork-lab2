@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--顶部三个标签+图标： -->
+    <LinearLayout
+        android:id="@+id/layout_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Tab1 Space Stations-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/space_station_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Space Stations"/>
+        </LinearLayout>
+
+        <!--Tab2 Flights-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/rocket_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flights"/>
+        </LinearLayout>
+
+        <!--Tab3 Rovers-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/rover_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rovers"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--DCA 绿色框-->
+    <TextView
+        android:id="@+id/tv_dca"
+        android:text="DCA"
+        android:textSize="20sp"
+        android:background="#2e7d32"
+        android:textColor="#ffffff"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_tabs"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"/>
+
+    <!--MARS 绿色框-->
+
+    <!--双向箭头 double_arrows.png 放在DCA和MARS中间-->
+
+    <TextView
+        android:id="@+id/tv_mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="#2e7d32"
+        android:paddingLeft="40dp"
+        android:paddingTop="30dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="30dp"
+
+        android:text="MARS"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_dca" />
+
+    <ImageView
+        android:id="@+id/img_arrow_double"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/double_arrows"
+        app:layout_constraintTop_toTopOf="@id/tv_dca"
+        app:layout_constraintBottom_toBottomOf="@id/tv_dca"
+        app:layout_constraintStart_toEndOf="@id/tv_dca"
+        app:layout_constraintEnd_toStartOf="@id/tv_mars"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"/>
+
+
+
+    <!--One Way 文字 + Switch开关 -->
+    <LinearLayout
+        android:id="@+id/layout_oneway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#cc7722"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tv_dca"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Way"
+            android:textColor="#ffffff"/>
+
+
+
+        <Switch
+            android:id="@+id/sw_oneway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"/>
+    </LinearLayout>
+
+    <!--1 Traveller-->
+    <TextView
+        android:id="@+id/tv_traveller"
+        android:text="1 Traveller"
+        android:background="#cc7722"
+        android:textColor="#ffffff"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_oneway"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="20dp"/>
+
+    <!--火箭图片  -->
+    <ImageView
+        android:id="@+id/img_rocket"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/rocket_icon"
+        app:layout_constraintTop_toBottomOf="@id/tv_traveller"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"/>
+
+    <!--星球图片  -->
+    <ImageView
+        android:id="@+id/img_planet"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/galaxy"
+        app:layout_constraintTop_toTopOf="@id/img_rocket"
+        app:layout_constraintStart_toEndOf="@id/img_rocket"
+        android:layout_marginStart="20dp"/>
+
+    <!--底部DEPART绿色按钮，贴屏幕底部 -->
+    <Button
+        android:id="@+id/btn_depart"
+        android:text="DEPART"
+        android:backgroundTint="#2e7d32"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
